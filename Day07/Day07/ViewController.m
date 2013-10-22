@@ -44,31 +44,33 @@
     [array removeObject:@""];
     NSCountedSet *set = [NSCountedSet new];
     [set addObjectsFromArray:array];
-    int max = 0;int min = INT16_MAX;
-    id omax;id omin;
-    for (id obj in set) {
-        if (min > [set countForObject:obj]) {
-            min =[set countForObject:obj];
-            omin = obj;
-        }
-        if (max < [set countForObject:obj]) {
-            max =[set countForObject:obj];
-            omax = obj;
-        }
-    }
+
     NSLog(@"Tong so tu duoc dung:%d",[set count]);
-    NSLog(@"Tu viet it nhat:%@ - so luong:%d", omin,min);
-    NSLog(@"Tu viet nhieu nhat:%@ - so luong:%d", omax,max);
-    NSMutableSet *set1 = [[NSMutableSet alloc] initWithArray:array];
-    NSMutableSet *set2 = [[NSMutableSet alloc] initWithObjects:@"a",@"an",@"and",@"but",@"the",@"to",@"me",@"have",@"has",@"of",@"if",@"it",nil];
-    NSMutableArray *arr = [NSMutableArray new];
-    for (id obj in set1)
+    
+    NSMutableSet *set2 = [[NSMutableSet alloc] initWithObjects:@"a",@"an",@"and",@"but",@"by",@"me",@"have",@"has",@"if",@"it",@"in",@"is",@"or",@"of",@"for",@"the",@"to",@"wwith",nil];
+    NSMutableArray *arrValue = [NSMutableArray new];
+    NSMutableArray *arrIndex = [NSMutableArray new];
+    for (id obj in set)
     {
         if (![set2 containsObject:obj]) {
-            [arr addObject:obj];
+            [arrValue addObject:obj];
+            int i = [set countForObject:obj];
+            [arrIndex addObject:[NSNumber numberWithInt:i]];
         }
     }
-    NSLog(@"Cac tu khoa:%@",arr);
+    for (int i =0; i< [arrIndex count] -1; i++) {
+        for (int j = i+1;j< [arrIndex count];j++) {
+            if ([arrIndex[i] integerValue] <[arrIndex[j] integerValue]) {
+                [arrValue exchangeObjectAtIndex:i withObjectAtIndex:j];
+                [arrIndex exchangeObjectAtIndex:i withObjectAtIndex:j];
+            }
+        }
+    }
+    NSLog(@"Tu viet it nhat:%@ - so luong:%@", arrValue[[arrValue count]-1],arrIndex[[arrIndex count]-1]);
+    NSLog(@"Tu viet nhieu nhat:%@ - so luong:%@", arrValue[0],arrIndex[0]);
+    for (int i=0; i< [arrValue count]; i++) {
+        NSLog(@"%@ --%@",arrValue[i],arrIndex[i]);
+    }
 }
 
 @end
