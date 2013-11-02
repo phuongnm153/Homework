@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ViewController.m
 //  Day10_02
 //
 //  Created by MAC on 11/2/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
--(int) returnNumber;
+@interface City : UIImageView
+
 @end

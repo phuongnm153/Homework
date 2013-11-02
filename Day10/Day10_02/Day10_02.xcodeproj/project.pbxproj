@@ -21,6 +21,19 @@
 		66429F9118248AC700402227 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66429F7318248AC700402227 /* UIKit.framework */; };
 		66429F9918248AC700402227 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 66429F9718248AC700402227 /* InfoPlist.strings */; };
 		66429F9B18248AC700402227 /* Day10_02Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66429F9A18248AC700402227 /* Day10_02Tests.m */; };
+		66429FA818248B0600402227 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 66429FA518248B0600402227 /* City.m */; };
+		66429FA918248B0600402227 /* Walker.m in Sources */ = {isa = PBXBuildFile; fileRef = 66429FA718248B0600402227 /* Walker.m */; };
+		66429FB41824942E00402227 /* walking-1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 66429FAC1824942E00402227 /* walking-1.gif */; };
+		66429FB51824942E00402227 /* walking-2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 66429FAD1824942E00402227 /* walking-2.gif */; };
+		66429FB61824942E00402227 /* walking-3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 66429FAE1824942E00402227 /* walking-3.gif */; };
+		66429FB71824942E00402227 /* walking-4.gif in Resources */ = {isa = PBXBuildFile; fileRef = 66429FAF1824942E00402227 /* walking-4.gif */; };
+		66429FB81824942E00402227 /* walking-5.gif in Resources */ = {isa = PBXBuildFile; fileRef = 66429FB01824942E00402227 /* walking-5.gif */; };
+		66429FB91824942E00402227 /* walking-6.gif in Resources */ = {isa = PBXBuildFile; fileRef = 66429FB11824942E00402227 /* walking-6.gif */; };
+		66429FBA1824942E00402227 /* walking-7.gif in Resources */ = {isa = PBXBuildFile; fileRef = 66429FB21824942E00402227 /* walking-7.gif */; };
+		66429FBB1824942E00402227 /* walking-8.gif in Resources */ = {isa = PBXBuildFile; fileRef = 66429FB31824942E00402227 /* walking-8.gif */; };
+		66429FC01824AA1700402227 /* city-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 66429FBD1824AA1700402227 /* city-1.png */; };
+		66429FC11824AA1700402227 /* city-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 66429FBE1824AA1700402227 /* city-2.png */; };
+		66429FC61824B96C00402227 /* bomb.gif in Resources */ = {isa = PBXBuildFile; fileRef = 66429FC51824B96C00402227 /* bomb.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +66,21 @@
 		66429F9618248AC700402227 /* Day10_02Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Day10_02Tests-Info.plist"; sourceTree = "<group>"; };
 		66429F9818248AC700402227 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		66429F9A18248AC700402227 /* Day10_02Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Day10_02Tests.m; sourceTree = "<group>"; };
+		66429FA418248B0600402227 /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
+		66429FA518248B0600402227 /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
+		66429FA618248B0600402227 /* Walker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Walker.h; sourceTree = "<group>"; };
+		66429FA718248B0600402227 /* Walker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Walker.m; sourceTree = "<group>"; };
+		66429FAC1824942E00402227 /* walking-1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "walking-1.gif"; sourceTree = "<group>"; };
+		66429FAD1824942E00402227 /* walking-2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "walking-2.gif"; sourceTree = "<group>"; };
+		66429FAE1824942E00402227 /* walking-3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "walking-3.gif"; sourceTree = "<group>"; };
+		66429FAF1824942E00402227 /* walking-4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "walking-4.gif"; sourceTree = "<group>"; };
+		66429FB01824942E00402227 /* walking-5.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "walking-5.gif"; sourceTree = "<group>"; };
+		66429FB11824942E00402227 /* walking-6.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "walking-6.gif"; sourceTree = "<group>"; };
+		66429FB21824942E00402227 /* walking-7.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "walking-7.gif"; sourceTree = "<group>"; };
+		66429FB31824942E00402227 /* walking-8.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "walking-8.gif"; sourceTree = "<group>"; };
+		66429FBD1824AA1700402227 /* city-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "city-1.png"; sourceTree = "<group>"; };
+		66429FBE1824AA1700402227 /* city-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "city-2.png"; sourceTree = "<group>"; };
+		66429FC51824B96C00402227 /* bomb.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = bomb.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +140,9 @@
 		66429F7518248AC700402227 /* Day10_02 */ = {
 			isa = PBXGroup;
 			children = (
+				66429FC51824B96C00402227 /* bomb.gif */,
+				66429FBC18249CD300402227 /* City */,
+				66429FAA18248B2300402227 /* Walker */,
 				66429F7E18248AC700402227 /* AppDelegate.h */,
 				66429F7F18248AC700402227 /* AppDelegate.m */,
 				66429F8118248AC700402227 /* Main.storyboard */,
@@ -150,6 +181,34 @@
 				66429F9718248AC700402227 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		66429FAA18248B2300402227 /* Walker */ = {
+			isa = PBXGroup;
+			children = (
+				66429FAC1824942E00402227 /* walking-1.gif */,
+				66429FAD1824942E00402227 /* walking-2.gif */,
+				66429FAE1824942E00402227 /* walking-3.gif */,
+				66429FAF1824942E00402227 /* walking-4.gif */,
+				66429FB01824942E00402227 /* walking-5.gif */,
+				66429FB11824942E00402227 /* walking-6.gif */,
+				66429FB21824942E00402227 /* walking-7.gif */,
+				66429FB31824942E00402227 /* walking-8.gif */,
+				66429FA618248B0600402227 /* Walker.h */,
+				66429FA718248B0600402227 /* Walker.m */,
+			);
+			name = Walker;
+			sourceTree = "<group>";
+		};
+		66429FBC18249CD300402227 /* City */ = {
+			isa = PBXGroup;
+			children = (
+				66429FBD1824AA1700402227 /* city-1.png */,
+				66429FBE1824AA1700402227 /* city-2.png */,
+				66429FA418248B0600402227 /* City.h */,
+				66429FA518248B0600402227 /* City.m */,
+			);
+			name = City;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,8 +287,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66429FC11824AA1700402227 /* city-2.png in Resources */,
+				66429FBA1824942E00402227 /* walking-7.gif in Resources */,
+				66429FB81824942E00402227 /* walking-5.gif in Resources */,
+				66429FB71824942E00402227 /* walking-4.gif in Resources */,
+				66429FB51824942E00402227 /* walking-2.gif in Resources */,
+				66429FC01824AA1700402227 /* city-1.png in Resources */,
+				66429FC61824B96C00402227 /* bomb.gif in Resources */,
+				66429FB41824942E00402227 /* walking-1.gif in Resources */,
+				66429FB91824942E00402227 /* walking-6.gif in Resources */,
 				66429F8818248AC700402227 /* Images.xcassets in Resources */,
+				66429FBB1824942E00402227 /* walking-8.gif in Resources */,
 				66429F7A18248AC700402227 /* InfoPlist.strings in Resources */,
+				66429FB61824942E00402227 /* walking-3.gif in Resources */,
 				66429F8318248AC700402227 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,7 +321,9 @@
 			files = (
 				66429F8618248AC700402227 /* ViewController.m in Sources */,
 				66429F8018248AC700402227 /* AppDelegate.m in Sources */,
+				66429FA818248B0600402227 /* City.m in Sources */,
 				66429F7C18248AC700402227 /* main.m in Sources */,
+				66429FA918248B0600402227 /* Walker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +532,7 @@
 				66429FA018248AC700402227 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		66429FA118248AC700402227 /* Build configuration list for PBXNativeTarget "Day10_02Tests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +541,7 @@
 				66429FA318248AC700402227 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
