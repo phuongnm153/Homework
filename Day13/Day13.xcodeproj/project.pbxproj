@@ -39,6 +39,15 @@
 		66DE6EA8182E9AB500C44E79 /* Ratman 2-08.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 66DE6E9F182E9AB500C44E79 /* Ratman 2-08.jpg */; };
 		66DE6EA9182E9AB500C44E79 /* Ratman 2-09.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 66DE6EA0182E9AB500C44E79 /* Ratman 2-09.jpg */; };
 		66DE6EAB182E9BFA00C44E79 /* Ratman 1-02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 66DE6EAA182E9BFA00C44E79 /* Ratman 1-02.jpg */; };
+		66DE6EB6182EA2FD00C44E79 /* Ratman 3-01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 66DE6EAD182EA2FD00C44E79 /* Ratman 3-01.jpg */; };
+		66DE6EB7182EA2FD00C44E79 /* Ratman 3-02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 66DE6EAE182EA2FD00C44E79 /* Ratman 3-02.jpg */; };
+		66DE6EB8182EA2FD00C44E79 /* Ratman 3-03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 66DE6EAF182EA2FD00C44E79 /* Ratman 3-03.jpg */; };
+		66DE6EB9182EA2FD00C44E79 /* Ratman 3-04.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 66DE6EB0182EA2FD00C44E79 /* Ratman 3-04.jpg */; };
+		66DE6EBA182EA2FD00C44E79 /* Ratman 3-05.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 66DE6EB1182EA2FD00C44E79 /* Ratman 3-05.jpg */; };
+		66DE6EBB182EA2FD00C44E79 /* Ratman 3-06.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 66DE6EB2182EA2FD00C44E79 /* Ratman 3-06.jpg */; };
+		66DE6EBC182EA2FD00C44E79 /* Ratman 3-07.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 66DE6EB3182EA2FD00C44E79 /* Ratman 3-07.jpg */; };
+		66DE6EBD182EA2FD00C44E79 /* Ratman 3-08.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 66DE6EB4182EA2FD00C44E79 /* Ratman 3-08.jpg */; };
+		66DE6EBE182EA2FD00C44E79 /* Ratman 3-09.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 66DE6EB5182EA2FD00C44E79 /* Ratman 3-09.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +98,15 @@
 		66DE6E9F182E9AB500C44E79 /* Ratman 2-08.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Ratman 2-08.jpg"; sourceTree = "<group>"; };
 		66DE6EA0182E9AB500C44E79 /* Ratman 2-09.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Ratman 2-09.jpg"; sourceTree = "<group>"; };
 		66DE6EAA182E9BFA00C44E79 /* Ratman 1-02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Ratman 1-02.jpg"; sourceTree = "<group>"; };
+		66DE6EAD182EA2FD00C44E79 /* Ratman 3-01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Ratman 3-01.jpg"; sourceTree = "<group>"; };
+		66DE6EAE182EA2FD00C44E79 /* Ratman 3-02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Ratman 3-02.jpg"; sourceTree = "<group>"; };
+		66DE6EAF182EA2FD00C44E79 /* Ratman 3-03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Ratman 3-03.jpg"; sourceTree = "<group>"; };
+		66DE6EB0182EA2FD00C44E79 /* Ratman 3-04.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Ratman 3-04.jpg"; sourceTree = "<group>"; };
+		66DE6EB1182EA2FD00C44E79 /* Ratman 3-05.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Ratman 3-05.jpg"; sourceTree = "<group>"; };
+		66DE6EB2182EA2FD00C44E79 /* Ratman 3-06.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Ratman 3-06.jpg"; sourceTree = "<group>"; };
+		66DE6EB3182EA2FD00C44E79 /* Ratman 3-07.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Ratman 3-07.jpg"; sourceTree = "<group>"; };
+		66DE6EB4182EA2FD00C44E79 /* Ratman 3-08.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Ratman 3-08.jpg"; sourceTree = "<group>"; };
+		66DE6EB5182EA2FD00C44E79 /* Ratman 3-09.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Ratman 3-09.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +244,15 @@
 		66DE6EAC182EA2E700C44E79 /* Chapter03 */ = {
 			isa = PBXGroup;
 			children = (
+				66DE6EAD182EA2FD00C44E79 /* Ratman 3-01.jpg */,
+				66DE6EAE182EA2FD00C44E79 /* Ratman 3-02.jpg */,
+				66DE6EAF182EA2FD00C44E79 /* Ratman 3-03.jpg */,
+				66DE6EB0182EA2FD00C44E79 /* Ratman 3-04.jpg */,
+				66DE6EB1182EA2FD00C44E79 /* Ratman 3-05.jpg */,
+				66DE6EB2182EA2FD00C44E79 /* Ratman 3-06.jpg */,
+				66DE6EB3182EA2FD00C44E79 /* Ratman 3-07.jpg */,
+				66DE6EB4182EA2FD00C44E79 /* Ratman 3-08.jpg */,
+				66DE6EB5182EA2FD00C44E79 /* Ratman 3-09.jpg */,
 			);
 			name = Chapter03;
 			sourceTree = "<group>";
@@ -306,9 +333,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66DE6EB6182EA2FD00C44E79 /* Ratman 3-01.jpg in Resources */,
 				66DE6EA8182E9AB500C44E79 /* Ratman 2-08.jpg in Resources */,
+				66DE6EBD182EA2FD00C44E79 /* Ratman 3-08.jpg in Resources */,
 				66DE6EA3182E9AB500C44E79 /* Ratman 2-03.jpg in Resources */,
 				66DE6E8E182E914500C44E79 /* Ratman 1-01.jpg in Resources */,
+				66DE6EBC182EA2FD00C44E79 /* Ratman 3-07.jpg in Resources */,
+				66DE6EB8182EA2FD00C44E79 /* Ratman 3-03.jpg in Resources */,
 				66DE6E67182E86A600C44E79 /* Images.xcassets in Resources */,
 				66DE6E8F182E914500C44E79 /* Ratman 1-03.jpg in Resources */,
 				66DE6EAB182E9BFA00C44E79 /* Ratman 1-02.jpg in Resources */,
@@ -318,14 +349,19 @@
 				66DE6E59182E86A500C44E79 /* InfoPlist.strings in Resources */,
 				66DE6E92182E914500C44E79 /* Ratman 1-06.jpg in Resources */,
 				66DE6E62182E86A500C44E79 /* Main.storyboard in Resources */,
+				66DE6EB7182EA2FD00C44E79 /* Ratman 3-02.jpg in Resources */,
 				66DE6EA7182E9AB500C44E79 /* Ratman 2-07.jpg in Resources */,
 				66DE6EA9182E9AB500C44E79 /* Ratman 2-09.jpg in Resources */,
 				66DE6E94182E914500C44E79 /* Ratman 1-08.jpg in Resources */,
 				66DE6EA6182E9AB500C44E79 /* Ratman 2-06.jpg in Resources */,
 				66DE6EA1182E9AB500C44E79 /* Ratman 2-01.jpg in Resources */,
+				66DE6EBE182EA2FD00C44E79 /* Ratman 3-09.jpg in Resources */,
 				66DE6E90182E914500C44E79 /* Ratman 1-04.jpg in Resources */,
 				66DE6E95182E914500C44E79 /* Ratman 1-09.jpg in Resources */,
+				66DE6EBA182EA2FD00C44E79 /* Ratman 3-05.jpg in Resources */,
+				66DE6EB9182EA2FD00C44E79 /* Ratman 3-04.jpg in Resources */,
 				66DE6EA2182E9AB500C44E79 /* Ratman 2-02.jpg in Resources */,
+				66DE6EBB182EA2FD00C44E79 /* Ratman 3-06.jpg in Resources */,
 				66DE6E93182E914500C44E79 /* Ratman 1-07.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

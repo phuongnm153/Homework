@@ -17,14 +17,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="XND-5S-Ajn">
-                                <rect key="frame" x="0.0" y="64" width="288" height="960"/>
+                                <rect key="frame" x="0.0" y="44" width="288" height="980"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="ADY-3K-Xip">
+                                    <rect key="frame" x="0.0" y="0.0" width="288" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="BYZ-38-t0r" id="bHQ-nk-8MU"/>
+                                    </connections>
+                                </searchBar>
                                 <sections>
-                                    <tableViewSection id="BZ1-Kx-JuE">
+                                    <tableViewSection headerTitle="Ratman" id="BZ1-Kx-JuE">
                                         <cells>
                                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="ccP-7w-EhZ" style="IBUITableViewCellStyleDefault" id="0Gf-Ag-6Qu">
-                                                <rect key="frame" x="0.0" y="0.0" width="288" height="44"/>
+                                                <rect key="frame" x="0.0" y="66" width="288" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Gf-Ag-6Qu" id="EWN-sk-PhS">
                                                     <rect key="frame" x="0.0" y="0.0" width="288" height="43"/>
@@ -41,7 +49,7 @@
                                                 </tableViewCellContentView>
                                             </tableViewCell>
                                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="HuU-K9-wHA" style="IBUITableViewCellStyleDefault" id="xEi-ld-y7I">
-                                                <rect key="frame" x="0.0" y="44" width="288" height="44"/>
+                                                <rect key="frame" x="0.0" y="110" width="288" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xEi-ld-y7I" id="6A9-fU-Xn4">
                                                     <rect key="frame" x="0.0" y="0.0" width="288" height="43"/>
@@ -58,7 +66,7 @@
                                                 </tableViewCellContentView>
                                             </tableViewCell>
                                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="I22-uj-D5o" style="IBUITableViewCellStyleDefault" id="L32-O2-oN6">
-                                                <rect key="frame" x="0.0" y="88" width="288" height="44"/>
+                                                <rect key="frame" x="0.0" y="154" width="288" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="L32-O2-oN6" id="u0F-Cr-m3O">
                                                     <rect key="frame" x="0.0" y="0.0" width="288" height="43"/>
@@ -82,17 +90,12 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Zw7-gf-vjb"/>
                                 </connections>
                             </tableView>
-                            <searchBar contentMode="redraw" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ADY-3K-Xip">
-                                <rect key="frame" x="0.0" y="20" width="288" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VhC-ZB-K2g">
-                                <rect key="frame" x="296" y="20" width="472" height="959"/>
+                                <rect key="frame" x="296" y="44" width="472" height="935"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2ZT-h6-UbL">
-                                <rect key="frame" x="296" y="20" width="472" height="959"/>
+                                <rect key="frame" x="296" y="44" width="472" height="935"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </scrollView>
                             <pageControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="dwV-fW-aIp">
@@ -100,22 +103,29 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="pageIndicatorTintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </pageControl>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zv9-qX-2MS">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Chapter List" id="fYu-cr-I1h">
+                                        <connections>
+                                            <action selector="itemsList:" destination="BYZ-38-t0r" id="dQi-jb-gsx"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="dwV-fW-aIp" firstAttribute="centerX" secondItem="VhC-ZB-K2g" secondAttribute="centerX" id="1x1-rO-cJT"/>
-                            <constraint firstItem="ADY-3K-Xip" firstAttribute="trailing" secondItem="XND-5S-Ajn" secondAttribute="trailing" id="3ch-F0-wi0"/>
-                            <constraint firstItem="VhC-ZB-K2g" firstAttribute="top" secondItem="l4f-hc-zeu" secondAttribute="bottom" id="4m2-EI-sEq"/>
-                            <constraint firstItem="2ZT-h6-UbL" firstAttribute="top" secondItem="l4f-hc-zeu" secondAttribute="bottom" id="6Jf-pq-15O"/>
                             <constraint firstAttribute="trailing" secondItem="VhC-ZB-K2g" secondAttribute="trailing" id="BDn-r6-0Y1"/>
-                            <constraint firstItem="ADY-3K-Xip" firstAttribute="leading" secondItem="XND-5S-Ajn" secondAttribute="leading" id="FdR-Jg-mEz"/>
+                            <constraint firstItem="XND-5S-Ajn" firstAttribute="top" secondItem="zv9-qX-2MS" secondAttribute="bottom" id="FIN-KT-EzP"/>
                             <constraint firstItem="2ZT-h6-UbL" firstAttribute="leading" secondItem="XND-5S-Ajn" secondAttribute="trailing" constant="8" id="IJi-fO-QKy"/>
-                            <constraint firstItem="XND-5S-Ajn" firstAttribute="top" secondItem="ADY-3K-Xip" secondAttribute="bottom" id="LfZ-qP-xLy"/>
-                            <constraint firstItem="ADY-3K-Xip" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ocn-m6-HE5"/>
+                            <constraint firstItem="VhC-ZB-K2g" firstAttribute="top" secondItem="zv9-qX-2MS" secondAttribute="bottom" id="LGr-F8-ZXv"/>
                             <constraint firstAttribute="trailing" secondItem="2ZT-h6-UbL" secondAttribute="trailing" id="OiS-wL-0IB"/>
+                            <constraint firstItem="2ZT-h6-UbL" firstAttribute="top" secondItem="zv9-qX-2MS" secondAttribute="bottom" id="ReN-L0-nHh"/>
                             <constraint firstItem="e1E-qU-b5u" firstAttribute="top" secondItem="dwV-fW-aIp" secondAttribute="bottom" constant="5" id="W8B-ZW-cVV"/>
                             <constraint firstItem="e1E-qU-b5u" firstAttribute="top" secondItem="VhC-ZB-K2g" secondAttribute="bottom" constant="45" id="WaA-p6-7TX"/>
-                            <constraint firstItem="ADY-3K-Xip" firstAttribute="top" secondItem="l4f-hc-zeu" secondAttribute="bottom" id="cxg-tD-vAS"/>
                             <constraint firstItem="e1E-qU-b5u" firstAttribute="top" secondItem="XND-5S-Ajn" secondAttribute="bottom" id="x5j-Di-cRP"/>
                             <constraint firstItem="e1E-qU-b5u" firstAttribute="top" secondItem="2ZT-h6-UbL" secondAttribute="bottom" constant="45" id="xp7-Qu-6BD"/>
                             <constraint firstItem="XND-5S-Ajn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="yMR-eh-cOY"/>
@@ -126,6 +136,7 @@
                         <outlet property="imageView" destination="VhC-ZB-K2g" id="JCJ-Pl-Loj"/>
                         <outlet property="pageControl" destination="dwV-fW-aIp" id="T09-xl-fUi"/>
                         <outlet property="scrollView" destination="2ZT-h6-UbL" id="jtt-ui-kGe"/>
+                        <outlet property="searchBar" destination="ADY-3K-Xip" id="bCE-Ps-Ojo"/>
                         <outlet property="tableView" destination="XND-5S-Ajn" id="sgA-Be-TfI"/>
                     </connections>
                 </viewController>

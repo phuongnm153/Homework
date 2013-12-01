@@ -49,21 +49,6 @@
         self.face1.center = CGPointMake(viewh/4,lbl2y);
         self.face3.center = CGPointMake(viewh*3/4,lbl2y );
     }
-    /*[self.view removeConstraint:layout12];
-    [self.view removeConstraint:layout23];
-    if (self.interfaceOrientation == UIInterfaceOrientationPortrait ||
-        self.interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown) {
-        layout12 = [NSLayoutConstraint constraintWithItem:self.lbl1 attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.lbl2 attribute:NSLayoutAttributeCenterY multiplier:1 constant:0];
-        layout23 = [NSLayoutConstraint constraintWithItem:self.lbl2 attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.lbl3 attribute:NSLayoutAttributeCenterY multiplier:1 constant:0];
-        [self.view addConstraint:layout12];
-        [self.view addConstraint:layout23];
-    }
-    else{
-        layout12 = [NSLayoutConstraint constraintWithItem:self.lbl1 attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.lbl2 attribute:NSLayoutAttributeCenterX multiplier:1 constant:0];
-        layout23 = [NSLayoutConstraint constraintWithItem:self.lbl2 attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.lbl3 attribute:NSLayoutAttributeCenterX multiplier:1 constant:0];
-        [self.view addConstraint:layout12];
-        [self.view addConstraint:layout23];
-    }*/
 }
 
 @end

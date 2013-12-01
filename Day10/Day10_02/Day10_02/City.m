@@ -13,14 +13,12 @@
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
-    if (self) {
-        ViewController *viewcon = [ViewController alloc];
-        int number = [viewcon returnNumber];
-        self.image = [UIImage imageNamed:[NSString stringWithFormat:@"city-%d.png",number]];
-    }
     return self;
 }
-
+-(void) imageNumber:(int) number
+{
+    self.image = [UIImage imageNamed:[NSString stringWithFormat:@"city-%d.png",number]];
+}
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

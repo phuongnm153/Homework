@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface City : UIImageView
-
+-(void) imageNumber:(int) number;
 @end
