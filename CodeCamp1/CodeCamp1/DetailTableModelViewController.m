@@ -8,12 +8,14 @@
 
 #import "DetailTableModelViewController.h"
 #import "ModelTableCell.h"
+#import "Models.h"
 #import "DetailModelViewController.h"
 
 @interface DetailTableModelViewController ()
 {
-    NSMutableArray *_data;
+    NSMutableArray *_data,*_tmpData;
 }
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @end
 
 @implementation DetailTableModelViewController
@@ -26,21 +28,20 @@ static NSString *CellModel = @"CellModel";
     //Get DATA
     if(_data) return;
     _data = [NSMutableArray new];
-    [_data addObject:[[ModelTableCell alloc] initWithName:@"Adriana Lima"
-                                                  andIcon:@"2013_Adriana_Lima"
-                                               andCountry:@"Brazil"]];
-    [_data addObject:[[ModelTableCell alloc] initWithName:@"Alessandra Ambrosio"
-                                                  andIcon:@"2013_Alessandra_Ambrosio"
-                                               andCountry:@"Brazil"]];
-    [_data addObject:[[ModelTableCell alloc] initWithName:@"Candice Swanepoel"
-                                                  andIcon:@"2013_Candice_Swanepoel"
-                                               andCountry:@"South Africa"]];
-    [_data addObject:[[ModelTableCell alloc] initWithName:@"Doutzen Kroes"
-                                                  andIcon:@"2013_Doutzen_Kroes"
-                                               andCountry:@"Netherlands"]];
-    [_data addObject:[[ModelTableCell alloc] initWithName:@"Karlie Kloss"
-                                                  andIcon:@"2008_lily"
-                                               andCountry:@"United States"]];
+    _tmpData = [NSMutableArray new];
+    NSBundle *mainBundle = [NSBundle mainBundle];
+    NSString *staticResourcePath = [mainBundle pathForResource:@"ModelsList" ofType:@"plist"];
+    NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:staticResourcePath];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"Name" ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+    NSArray *sortedArray = [[dictionary allValues] sortedArrayUsingDescriptors:sortDescriptors];
+    for (int i = 0;i < [dictionary count];i++) {
+        ModelTableCell *model = [[ModelTableCell alloc]
+                                initWithName:[[sortedArray objectAtIndex:i] objectForKey:@"Name"]
+                                andIcon:[[sortedArray objectAtIndex:i] objectForKey:@"IconFileName"]];
+        [_data addObject:model];
+    }
+    [_tmpData addObjectsFromArray:_data];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -58,9 +59,12 @@ static NSString *CellModel = @"CellModel";
     // Do any additional setup after loading the view from its nib.
     int year =self.year_select;
     self.navigationItem.title = [NSString stringWithFormat:@"Models %d",year+2008];
+    
+}
+-(void) viewDidLayoutSubviews
+{
     [self initData];
 }
-
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -74,15 +78,6 @@ static NSString *CellModel = @"CellModel";
     ModelTableCell *model = (ModelTableCell*)_data[indexPath.row];
     cell.textLabel.text = model.nameModel.text;
     cell.imageView.image = model.iconModel.image;
-//    ModelTableCell *cell = (ModelTableCell *)[self.tableView dequeueReusableCellWithIdentifier:CellModel forIndexPath:indexPath];
-//    
-//    // Configure Cell
-//    ModelTableCell *model = (ModelTableCell*) _data[indexPath.row];
-//    [cell.nameModel setText:[NSString stringWithFormat:@"%@", model.nameModel]];
-//    [cell.countryModel setText:[NSString stringWithFormat:@"%@", model.countryModel]];
-//    cell.iconModel = model.iconModel;
-//    cell.iconModel.layer.masksToBounds = YES;
-//    cell.iconModel.layer.cornerRadius = 5.0;
     
     return cell;
 }
@@ -90,7 +85,8 @@ static NSString *CellModel = @"CellModel";
 {
     
     DetailModelViewController *model_detail = [[DetailModelViewController alloc] init];
-    model_detail.model_select = indexPath.row;
+    ModelTableCell *model = (ModelTableCell*)_data[indexPath.row];
+    model_detail.model_name = model.nameModel.text;
     // Detai Model
     [self.navigationController pushViewController:model_detail animated:YES];
 }
@@ -106,7 +102,22 @@ static NSString *CellModel = @"CellModel";
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
     return NO;
 }
-
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    if ([searchText length] == 0) {
+        [_data removeAllObjects];
+        [_data addObjectsFromArray:_tmpData];
+    }else{
+        [_data removeAllObjects];
+        for (int i = 0;i< _tmpData.count;i++) {
+            ModelTableCell *model = (ModelTableCell*)_tmpData[i];
+            NSRange r = [model.nameModel.text.uppercaseString rangeOfString:searchText.uppercaseString];
+            if (r.location != NSNotFound) {
+                [_data addObject:model];
+            }
+        }
+    }
+    [tableView reloadData];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

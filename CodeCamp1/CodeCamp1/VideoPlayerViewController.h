@@ -10,7 +10,6 @@
 #import <MediaPlayer/MediaPlayer.h>
 
 @interface VideoPlayerViewController : UIViewController
-@property(nonatomic, retain) NSString *video_play_select;
-@property(nonatomic, retain) NSString *video_url;
+@property (assign,nonatomic) NSInteger *videoIndex;
 
 @end

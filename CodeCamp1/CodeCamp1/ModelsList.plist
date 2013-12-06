@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Adriana Lima</key>
+	<dict>
+		<key>Name</key>
+		<string>Adriana Lima</string>
+		<key>IconFileName</key>
+		<string>2013_Adriana_Lima</string>
+		<key>AvaFileUrl</key>
+		<string>http://static.ngankeo.vn/full/2013/11/16/nhung-guong-mat-thien-than-khong-the-thieu-cua-victorias-secret-1030210440a938be3ff849c87dc42a510dd467a6.jpg</string>
+		<key>ImgInfo</key>
+		<string>Adriana_Lima_info</string>
+		<key>Rating</key>
+		<integer>2</integer>
+	</dict>
+	<key>Alessandra Ambrosio</key>
+	<dict>
+		<key>Name</key>
+		<string>Alessandra Ambrosio</string>
+		<key>IconFileName</key>
+		<string>2013_Alessandra_Ambrosio</string>
+		<key>AvaFileUrl</key>
+		<string>http://static.ngankeo.vn/full/2013/11/16/nhung-guong-mat-thien-than-khong-the-thieu-cua-victorias-secret-6796056b81639be533a86a27cd2b56d700dc1083.jpg</string>
+		<key>ImgInfo</key>
+		<string>Alessandra_Ambrosio_info</string>
+		<key>Rating</key>
+		<integer>1</integer>
+	</dict>
+	<key>Candice Swanepoel</key>
+	<dict>
+		<key>Name</key>
+		<string>Candice Swanepoel</string>
+		<key>IconFileName</key>
+		<string>2013_Candice_Swanepoel</string>
+		<key>AvaFileUrl</key>
+		<string>http://static.ngankeo.vn/full/2013/11/16/nhung-guong-mat-thien-than-khong-the-thieu-cua-victorias-secret-f43a0906545ba56fffb0a7e780e1c674e35135ba.jpg</string>
+		<key>ImgInfo</key>
+		<string>Candice_Swanepoel_info</string>
+		<key>Rating</key>
+		<integer>2</integer>
+	</dict>
+	<key>Doutzen Kroes</key>
+	<dict>
+		<key>Name</key>
+		<string>Doutzen Kroes</string>
+		<key>IconFileName</key>
+		<string>2013_Doutzen_Kroes</string>
+		<key>AvaFileUrl</key>
+		<string>http://static.ngankeo.vn/full/2013/11/16/nhung-guong-mat-thien-than-khong-the-thieu-cua-victorias-secret-3d8ba4184a09076ec9df17e33c0681c5d23569e2.jpg</string>
+		<key>ImgInfo</key>
+		<string>Doutzen_Kroes_info</string>
+		<key>Rating</key>
+		<integer>1</integer>
+	</dict>
+	<key>Karlie Kloss</key>
+	<dict>
+		<key>Name</key>
+		<string>Karlie Kloss</string>
+		<key>IconFileName</key>
+		<string>2008_lily</string>
+		<key>AvaFileUrl</key>
+		<string>http://static.ngankeo.vn/full/2013/11/16/nhung-guong-mat-thien-than-khong-the-thieu-cua-victorias-secret-b5641a785362148523ec35ac12b93cdf0c9be46e.jpg</string>
+		<key>ImgInfo</key>
+		<string>Karlie_Kloss_info</string>
+		<key>Rating</key>
+		<integer>2</integer>
+	</dict>
+</dict>
+</plist>

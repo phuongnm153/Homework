@@ -6,7 +6,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailImageViewController">
             <connections>
-                <outlet property="NameDetailImage" destination="EeF-1m-JBb" id="kSC-kb-L34"/>
                 <outlet property="pageControl" destination="N0h-ai-uWf" id="32U-Ci-juU"/>
                 <outlet property="scrollView" destination="Aqh-7y-Ap3" id="0s6-5K-xpQ"/>
                 <outlet property="view" destination="1" id="3"/>
@@ -17,15 +16,8 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NameDetail" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EeF-1m-JBb">
-                    <rect key="frame" x="0.0" y="65" width="320" height="29"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                    <color key="textColor" red="0.9892578125" green="0.069297407899999997" blue="0.1510536586" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aqh-7y-Ap3">
-                    <rect key="frame" x="0.0" y="65" width="320" height="503"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Aqh-7y-Ap3">
+                    <rect key="frame" x="0.0" y="58" width="320" height="510"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                 </scrollView>
                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="N0h-ai-uWf">
@@ -38,11 +30,11 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="centerX" secondItem="N0h-ai-uWf" secondAttribute="centerX" id="4jW-vB-Thg"/>
-                <constraint firstAttribute="bottom" secondItem="Aqh-7y-Ap3" secondAttribute="bottom" id="LSa-bS-2TF"/>
+                <constraint firstAttribute="bottom" secondItem="Aqh-7y-Ap3" secondAttribute="bottom" id="8yn-WX-45p"/>
                 <constraint firstAttribute="centerX" secondItem="Aqh-7y-Ap3" secondAttribute="centerX" id="LtH-nF-YJe"/>
                 <constraint firstAttribute="bottom" secondItem="N0h-ai-uWf" secondAttribute="bottom" id="OSR-UJ-QZU"/>
                 <constraint firstAttribute="trailing" secondItem="Aqh-7y-Ap3" secondAttribute="trailing" id="Oi4-dH-Kx9"/>
-                <constraint firstItem="Aqh-7y-Ap3" firstAttribute="top" secondItem="1" secondAttribute="top" constant="65" id="Sw6-vB-Una"/>
+                <constraint firstItem="Aqh-7y-Ap3" firstAttribute="top" secondItem="1" secondAttribute="top" constant="55" id="P5y-rE-eXO"/>
                 <constraint firstItem="Aqh-7y-Ap3" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="ctW-PB-iYb"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>

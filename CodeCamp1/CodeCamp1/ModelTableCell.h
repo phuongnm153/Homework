@@ -12,8 +12,6 @@
 
 @property (strong, nonatomic) UILabel *nameModel;
 @property (strong, nonatomic) UIImageView *iconModel;
-@property (strong, nonatomic) UILabel *countryModel;
 - (id) initWithName:(NSString*) name
-            andIcon:(NSString*) icon
-         andCountry:(NSString*) country;
+            andIcon:(NSString*) icon;
 @end

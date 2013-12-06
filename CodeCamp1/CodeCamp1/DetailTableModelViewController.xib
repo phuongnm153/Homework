@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailTableModelViewController">
             <connections>
+                <outlet property="searchBar" destination="ZVh-jE-o0v" id="HML-B1-hng"/>
                 <outlet property="tableView" destination="N0i-D0-uXB" id="eve-XE-q6g"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
@@ -19,6 +20,14 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <searchBar key="tableHeaderView" contentMode="redraw" id="ZVh-jE-o0v">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                        <textInputTraits key="textInputTraits"/>
+                        <connections>
+                            <outlet property="delegate" destination="-1" id="0Ur-sB-wG2"/>
+                        </connections>
+                    </searchBar>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="hSR-Zx-m4A"/>
                         <outlet property="delegate" destination="-1" id="HFq-yl-dMp"/>
@@ -27,7 +36,7 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="N0i-D0-uXB" firstAttribute="top" secondItem="1" secondAttribute="top" id="6u3-Ug-MqM"/>
+                <constraint firstItem="N0i-D0-uXB" firstAttribute="top" secondItem="1" secondAttribute="top" id="Vh7-Iu-Zfh"/>
                 <constraint firstAttribute="bottom" secondItem="N0i-D0-uXB" secondAttribute="bottom" id="Zp9-dL-f9t"/>
                 <constraint firstAttribute="trailing" secondItem="N0i-D0-uXB" secondAttribute="trailing" id="ez2-BN-WtF"/>
                 <constraint firstItem="N0i-D0-uXB" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="jYQ-Iw-BVF"/>

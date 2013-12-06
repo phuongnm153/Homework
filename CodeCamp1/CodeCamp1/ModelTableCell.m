@@ -26,15 +26,6 @@
         //[self.mainLabel setTextColor:[UIColor redColor]];
         [self.nameModel setAutoresizingMask:(UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight)];
         
-        // Initialize Main Caountry
-        self.countryModel = [[UILabel alloc] initWithFrame:CGRectMake(80.0, 5.0, 200, 60)];
-        
-        // Configure Main Label
-        [self.countryModel setFont:[UIFont systemFontOfSize:14.0]];
-        [self.countryModel setTextAlignment:NSTextAlignmentLeft];
-        [self.countryModel setTextColor:[UIColor grayColor]];
-        [self.countryModel setAutoresizingMask:(UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight)];
-        
         //Image
         self.iconModel = [[UIImageView alloc] initWithFrame:CGRectMake(10.0, 5.0, 60.0, 60.0)];
         self.iconModel.contentMode = UIViewContentModeScaleAspectFit;
@@ -42,7 +33,6 @@
         
         // Add Main Label to Content View
         [self.contentView addSubview:self.nameModel];
-        [self.contentView addSubview:self.countryModel];
         [self.contentView addSubview:self.iconModel];
     }
     
@@ -50,11 +40,9 @@
 }
 - (id) initWithName:(NSString*) name
             andIcon:(NSString*) icon
-         andCountry:(NSString*) country
 {
     if (self = [super init]) {
         self.nameModel.text = name;
-        self.countryModel.text = country;
         self.iconModel.image = [UIImage imageNamed:icon];
     }
     return self;

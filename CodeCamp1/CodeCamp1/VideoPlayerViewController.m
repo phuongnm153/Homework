@@ -10,15 +10,13 @@
 
 @interface VideoPlayerViewController ()
 {
-    MPMoviePlayerController *moviePlayer;
+    NSMutableArray *_arr;
     UIWebView *_videoView;
 }
 @end
 
 @implementation VideoPlayerViewController
-@synthesize video_play_select;
-@synthesize video_url;
-
+@synthesize videoIndex;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -32,8 +30,14 @@
 {
     [super viewDidLoad];
     self.navigationController.navigationItem.title = @"Videos";
+    _arr = [NSMutableArray new];
     // Do any additional setup after loading the view from its nib.
-    //[self playVideo];
+    NSBundle *mainBundle = [NSBundle mainBundle];
+    NSString *staticResourcePath = [mainBundle pathForResource:@"VideosList" ofType:@"plist"];
+    NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:staticResourcePath];
+    NSLog(@"%d",(int)videoIndex+2008);
+    [_arr addObject:dictionary[[NSString stringWithFormat:@"%d",(int)videoIndex+2008]]];
+    NSLog(@"%@",dictionary[[NSString stringWithFormat:@"%d",(int)videoIndex+2008]]);
 }
 
 - (void)didReceiveMemoryWarning
@@ -61,7 +65,7 @@
                            <body>\
                            <iframe width=\"100%%\" height=\"240px\" src=\"%@\" frameborder=\"0\" allowfullscreen></iframe>\
                            </body>\
-                           </html>", video_url];
+                           </html>", _arr[0]];
     
     [_videoView loadHTMLString:videoHTML baseURL:nil];
 }

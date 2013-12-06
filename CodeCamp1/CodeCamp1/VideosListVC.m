@@ -7,7 +7,7 @@
 //
 
 #import "VideosListVC.h"
-#import "Videos.h"
+#import "TableYears.h"
 #import "VideoPlayerViewController.h"
 
 @interface VideosListVC ()<UITableViewDelegate, UITableViewDataSource>
@@ -36,7 +36,10 @@
 	// Do any additional setup after loading the view.
     [self setupData];
 }
-
+-(void) viewDidLayoutSubviews
+{
+    [self.tableView reloadData];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -47,31 +50,25 @@
     self.navigationController.navigationItem.title = @"Videos";
     if(_data) return;
     _data = [NSMutableArray new];
-    [_data addObject:[[Videos alloc] initWithName:@"Victoria Secret 2008"
-                                          andLogo:@"2008"
-                                          andLink:@"http://www.youtube.com/embed/JOKfhKkyyPw"]];
-    [_data addObject:[[Videos alloc] initWithName:@"Victoria Secret 2009"
-                                          andLogo:@"2009"
-                                          andLink:@"http://www.youtube.com/embed/MsMoi5VtKJE"]];
-    [_data addObject:[[Videos alloc] initWithName:@"Victoria Secret 2010"
-                                          andLogo:@"2010"
-                                          andLink:@"http://www.youtube.com/embed/4w9wLwli6t0"]];
-    [_data addObject:[[Videos alloc] initWithName:@"Victoria Secret 2011"
-                                          andLogo:@"2011"
-                                          andLink:@"http://www.ebookfrenzy.com/ios_book/movie/movie.mov"]];
-    [_data addObject:[[Videos alloc] initWithName:@"Victoria Secret 2012"
-                                          andLogo:@"2012"
-                                          andLink:@"http://www.ebookfrenzy.com/ios_book/movie/movie.mov"]];
-    [_data addObject:[[Videos alloc] initWithName:@"Victoria Secret 2013"
-                                          andLogo:@"2013"
-                                          andLink:@"http://www.ebookfrenzy.com/ios_book/movie/movie.mov"]];
+    NSBundle *mainBundle = [NSBundle mainBundle];
+    NSString *staticResourcePath = [mainBundle pathForResource:@"Years" ofType:@"plist"];
+    NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:staticResourcePath];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"Name" ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+    NSArray *sortedArray = [[dictionary allValues] sortedArrayUsingDescriptors:sortDescriptors];
+    for (int i = 0;i < [dictionary count];i++) {
+        TableYears *year = [[TableYears alloc]
+                            initWithName:[[sortedArray objectAtIndex:i] objectForKey:@"Name"]
+                            andLogo:[[sortedArray objectAtIndex:i] objectForKey:@"Logo"]];
+        [_data addObject:year];
+    }
 }
 
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     VideoPlayerViewController *video_detail = [[VideoPlayerViewController alloc] init];
-    video_detail.video_url = ((Videos*)_data[indexPath.row]).url;
+    video_detail.videoIndex = (int*) indexPath.row;
     [self.navigationController pushViewController:video_detail
                                          animated:YES];
 }
@@ -90,9 +87,9 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
     }
-    Videos *video = (Videos*)_data[indexPath.row];
-    cell.textLabel.text = video.name;
-    cell.imageView.image = video.logo;
+    TableYears *year = (TableYears*)_data[indexPath.row];
+    cell.textLabel.text = year.name;
+    cell.imageView.image = year.logo;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;

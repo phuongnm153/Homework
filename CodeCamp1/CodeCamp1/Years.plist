@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>2008</key>
+	<dict>
+		<key>Name</key>
+		<string>Victoria Secret 2008</string>
+		<key>Logo</key>
+		<string>2008</string>
+	</dict>
+	<key>2009</key>
+	<dict>
+		<key>Name</key>
+		<string>Victoria Secret 2009</string>
+		<key>Logo</key>
+		<string>2009</string>
+	</dict>
+	<key>2010</key>
+	<dict>
+		<key>Name</key>
+		<string>Victoria Secret 2010</string>
+		<key>Logo</key>
+		<string>2010</string>
+	</dict>
+	<key>2011</key>
+	<dict>
+		<key>Name</key>
+		<string>Victoria Secret 2011</string>
+		<key>Logo</key>
+		<string>2011</string>
+	</dict>
+	<key>2012</key>
+	<dict>
+		<key>Name</key>
+		<string>Victoria Secret 2012</string>
+		<key>Logo</key>
+		<string>2012</string>
+	</dict>
+	<key>2013</key>
+	<dict>
+		<key>Name</key>
+		<string>Victoria Secret 2013</string>
+		<key>Logo</key>
+		<string>2013</string>
+	</dict>
+</dict>
+</plist>

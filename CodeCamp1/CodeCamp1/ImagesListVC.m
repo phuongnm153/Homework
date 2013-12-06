@@ -33,9 +33,11 @@
     [super viewDidLoad];
     [self setupData];
 	// Do any additional setup after loading the view.
-    self.navigationController.navigationItem.title = @"Images";
 }
-
+-(void) viewDidLayoutSubviews
+{
+    //[self.tableView reloadData];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -46,18 +48,18 @@
     self.navigationController.navigationItem.title = @"Images";
     if(_data) return;
     _data = [NSMutableArray new];
-    [_data addObject:[[TableYears alloc] initWithName:@"Victoria Secret 2008"
-                                         andLogo:@"2008"]];
-    [_data addObject:[[TableYears alloc] initWithName:@"Victoria Secret 2009"
-                                         andLogo:@"2009"]];
-    [_data addObject:[[TableYears alloc] initWithName:@"Victoria Secret 2010"
-                                          andLogo:@"2010"]];
-    [_data addObject:[[TableYears alloc] initWithName:@"Victoria Secret 2011"
-                                          andLogo:@"2011"]];
-    [_data addObject:[[TableYears alloc] initWithName:@"Victoria Secret 2012"
-                                          andLogo:@"2012"]];
-    [_data addObject:[[TableYears alloc] initWithName:@"Victoria Secret 2013"
-                                          andLogo:@"2013"]];
+    NSBundle *mainBundle = [NSBundle mainBundle];
+    NSString *staticResourcePath = [mainBundle pathForResource:@"Years" ofType:@"plist"];
+    NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:staticResourcePath];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"Name" ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+    NSArray *sortedArray = [[dictionary allValues] sortedArrayUsingDescriptors:sortDescriptors];
+    for (int i = 0;i < [dictionary count];i++) {
+        TableYears *year = [[TableYears alloc]
+                            initWithName:[[sortedArray objectAtIndex:i] objectForKey:@"Name"]
+                            andLogo:[[sortedArray objectAtIndex:i] objectForKey:@"Logo"]];
+        [_data addObject:year];
+    }
 }
 
 #pragma mark - UITableViewDelegate
@@ -83,9 +85,9 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
     }
-    TableYears *img = (TableYears*)_data[indexPath.row];
-    cell.textLabel.text = img.name;
-    cell.imageView.image = img.logo;
+    TableYears *year = (TableYears*)_data[indexPath.row];
+    cell.textLabel.text = year.name;
+    cell.imageView.image = year.logo;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
