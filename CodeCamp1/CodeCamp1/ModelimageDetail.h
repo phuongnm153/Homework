@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ModelimageDetail.h
 //  CodeCamp1
 //
 //  Created by MAC on 12/8/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface ModelimageDetail : UIViewController
+@property (assign,nonatomic) NSString *modelName;
 @end

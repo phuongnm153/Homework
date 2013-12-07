@@ -67,8 +67,15 @@
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSMutableArray *_arr = [NSMutableArray new];
+    // Do any additional setup after loading the view from its nib.
+    NSBundle *mainBundle = [NSBundle mainBundle];
+    NSString *staticResourcePath = [mainBundle pathForResource:@"VideosList" ofType:@"plist"];
+    NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:staticResourcePath];
+    
+    [_arr addObject:dictionary[[NSString stringWithFormat:@"%d",(int)indexPath.row+2008]]];
     VideoPlayerViewController *video_detail = [[VideoPlayerViewController alloc] init];
-    video_detail.videoIndex = (int*) indexPath.row;
+    video_detail.videoUrl = _arr[0];
     [self.navigationController pushViewController:video_detail
                                          animated:YES];
 }

@@ -16,7 +16,7 @@
 @end
 
 @implementation VideoPlayerViewController
-@synthesize videoIndex;
+@synthesize videoUrl;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -30,14 +30,14 @@
 {
     [super viewDidLoad];
     self.navigationController.navigationItem.title = @"Videos";
-    _arr = [NSMutableArray new];
-    // Do any additional setup after loading the view from its nib.
-    NSBundle *mainBundle = [NSBundle mainBundle];
-    NSString *staticResourcePath = [mainBundle pathForResource:@"VideosList" ofType:@"plist"];
-    NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:staticResourcePath];
-    NSLog(@"%d",(int)videoIndex+2008);
-    [_arr addObject:dictionary[[NSString stringWithFormat:@"%d",(int)videoIndex+2008]]];
-    NSLog(@"%@",dictionary[[NSString stringWithFormat:@"%d",(int)videoIndex+2008]]);
+//    _arr = [NSMutableArray new];
+//    // Do any additional setup after loading the view from its nib.
+//    NSBundle *mainBundle = [NSBundle mainBundle];
+//    NSString *staticResourcePath = [mainBundle pathForResource:@"VideosList" ofType:@"plist"];
+//    NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:staticResourcePath];
+//
+//    [_arr addObject:dictionary[[NSString stringWithFormat:@"%d",(int)videoIndex+2008]]];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,7 +48,7 @@
 - (void) playVideo
 {
     [_videoView removeFromSuperview];
-    _videoView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 60, self.view.frame.size.width, self.view.frame.size.height-60)];
+    _videoView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     _videoView.backgroundColor = [UIColor clearColor];
     _videoView.opaque = NO;
     [self.view addSubview:_videoView];
@@ -65,7 +65,7 @@
                            <body>\
                            <iframe width=\"100%%\" height=\"240px\" src=\"%@\" frameborder=\"0\" allowfullscreen></iframe>\
                            </body>\
-                           </html>", _arr[0]];
+                           </html>", videoUrl];
     
     [_videoView loadHTMLString:videoHTML baseURL:nil];
 }

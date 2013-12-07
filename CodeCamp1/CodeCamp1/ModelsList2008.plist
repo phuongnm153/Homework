@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Adriana Lima</key>
+	<dict>
+		<key>Name</key>
+		<string>Adriana Lima</string>
+		<key>IconFileName</key>
+		<string>2013_Adriana_Lima</string>
+		<key>AvaFileUrl</key>
+		<string>http://static.ngankeo.vn/full/2013/11/16/nhung-guong-mat-thien-than-khong-the-thieu-cua-victorias-secret-1030210440a938be3ff849c87dc42a510dd467a6.jpg</string>
+		<key>ImgInfo</key>
+		<string>Adriana_Lima_info</string>
+		<key>VideoUrl</key>
+		<string>http://www.youtube.com/embed/7oT96wTfmaE</string>
+		<key>ImagesDetail</key>
+		<array>
+			<string>http://cdn01.cdn.justjared.com/wp-content/uploads/2012/11/adriana-vsshow/adriana-lima-alessandra-ambrosio-victorias-secret-fashion-show-2012-02.jpg</string>
+			<string>http://fittipdaily.com/wp-content/uploads/2012/01/adriana-lima-2.jpg</string>
+			<string>http://cdn.stylefrizz.com/img/adriana-lima-victorias-secret-fashion-show-2010.jpg</string>
+		</array>
+	</dict>
+	<key>Alessandra Ambrosio</key>
+	<dict>
+		<key>Name</key>
+		<string>Alessandra Ambrosio</string>
+		<key>IconFileName</key>
+		<string>2013_Alessandra_Ambrosio</string>
+		<key>AvaFileUrl</key>
+		<string>http://static.ngankeo.vn/full/2013/11/16/nhung-guong-mat-thien-than-khong-the-thieu-cua-victorias-secret-6796056b81639be533a86a27cd2b56d700dc1083.jpg</string>
+		<key>ImgInfo</key>
+		<string>Alessandra_Ambrosio_info</string>
+		<key>VideoUrl</key>
+		<string>http://www.youtube.com/embed/StkbklXVx-g</string>
+		<key>ImagesDetail</key>
+		<array>
+			<string>http://assets-s3.usmagazine.com/uploads/assets/articles/57492-picture-alessandra-ambrosio-models-25-million-bra-at-victorias-secret-fashion-sh/1352388690_alessandra-ambrosio-bra-467.jpg</string>
+			<string>http://i212.photobucket.com/albums/cc298/jundelmer/Hot%20Gallery/a8d4scd.jpg</string>
+			<string>http://www.modelinia.com/_content/slideshows/1044/images/2007.Alessandra.Ambrosio.BIG.jpg</string>
+		</array>
+	</dict>
+	<key>Candice Swanepoel</key>
+	<dict>
+		<key>Name</key>
+		<string>Candice Swanepoel</string>
+		<key>IconFileName</key>
+		<string>2013_Candice_Swanepoel</string>
+		<key>AvaFileUrl</key>
+		<string>http://static.ngankeo.vn/full/2013/11/16/nhung-guong-mat-thien-than-khong-the-thieu-cua-victorias-secret-f43a0906545ba56fffb0a7e780e1c674e35135ba.jpg</string>
+		<key>ImgInfo</key>
+		<string>Candice_Swanepoel_info</string>
+		<key>VideoUrl</key>
+		<string>http://www.youtube.com/embed/bmsTXSHhMdE</string>
+		<key>ImagesDetail</key>
+		<array>
+			<string>data:image/jpeg;base64,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</string>
+			<string>http://www3.pictures.zimbio.com/bg/Candice+Swanepoel+2010+Victoria+Secret+Fashion+zqnwuqotFkyl.jpg</string>
+			<string>https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFRq-hRfq3m6AGI6BmLY7Zwf1CzrH45MewTOAUNAxhJurlDc07</string>
+		</array>
+	</dict>
+	<key>Doutzen Kroes</key>
+	<dict>
+		<key>Name</key>
+		<string>Doutzen Kroes</string>
+		<key>IconFileName</key>
+		<string>2013_Doutzen_Kroes</string>
+		<key>AvaFileUrl</key>
+		<string>http://static.ngankeo.vn/full/2013/11/16/nhung-guong-mat-thien-than-khong-the-thieu-cua-victorias-secret-3d8ba4184a09076ec9df17e33c0681c5d23569e2.jpg</string>
+		<key>ImgInfo</key>
+		<string>Doutzen_Kroes_info</string>
+		<key>VideoUrl</key>
+		<string>http://www.youtube.com/embed/kprN2jW6UPA</string>
+		<key>ImagesDetail</key>
+		<array>
+			<string></string>
+			<string></string>
+			<string></string>
+		</array>
+	</dict>
+	<key>Karlie Kloss</key>
+	<dict>
+		<key>Name</key>
+		<string>Karlie Kloss</string>
+		<key>IconFileName</key>
+		<string>2008_lily</string>
+		<key>AvaFileUrl</key>
+		<string>http://static.ngankeo.vn/full/2013/11/16/nhung-guong-mat-thien-than-khong-the-thieu-cua-victorias-secret-b5641a785362148523ec35ac12b93cdf0c9be46e.jpg</string>
+		<key>ImgInfo</key>
+		<string>Karlie_Kloss_info</string>
+		<key>VideoUrl</key>
+		<string>http://www.youtube.com/embed/mph0jGGcZkU</string>
+		<key>ImagesDetail</key>
+		<array>
+			<string></string>
+			<string></string>
+			<string></string>
+		</array>
+	</dict>
+	<key>Erin Heatherton</key>
+	<dict>
+		<key>Name</key>
+		<string>Erin Heatherton</string>
+		<key>IconFileName</key>
+		<string>erin-icon.jpg</string>
+		<key>AvaFileUrl</key>
+		<string></string>
+		<key>ImgInfo</key>
+		<string></string>
+		<key>VideoUrl</key>
+		<string></string>
+	</dict>
+	<key>Lindsay Ellingson</key>
+	<dict>
+		<key>Name</key>
+		<string>Lindsay Ellingson</string>
+		<key>IconFileName</key>
+		<string>lindsay-icon.jpg</string>
+		<key>AvaFileUrl</key>
+		<string></string>
+		<key>ImgInfo</key>
+		<string></string>
+		<key>Rating</key>
+		<string></string>
+	</dict>
+	<key>Miranda Kerr</key>
+	<dict>
+		<key>Name</key>
+		<string>Miranda Kerr</string>
+		<key>IconFileName</key>
+		<string>miranda-icon.jpg</string>
+		<key>AvaFileUrl</key>
+		<string></string>
+		<key>ImgInfo</key>
+		<string></string>
+		<key>Rating</key>
+		<string></string>
+	</dict>
+</dict>
+</plist>

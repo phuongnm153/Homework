@@ -13,11 +13,11 @@
 @property(nonatomic, retain) NSString *model_icon;
 @property(nonatomic, retain) NSString *model_info;
 @property(nonatomic, retain) NSString *model_avatar;
-@property(nonatomic, assign) int *model_rating;
+@property(nonatomic, assign) NSString *model_video;
 - (id) initWithName: (NSString*) name
             andIcon: (NSString*) icon
             andInfo: (NSString*) info
             andAvatar:(NSString*) avatar
-            andRating:(int) rating;
+            andRating:(NSString*) video;
 
 @end

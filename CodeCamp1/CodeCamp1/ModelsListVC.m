@@ -63,8 +63,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     DetailTableModelViewController *model = [[DetailTableModelViewController alloc] init];
-    TableYears *year = (TableYears*)_data[indexPath.row];
-    model.year_select =(int*)[indexPath row];
+    model.year_select =[indexPath row]+2008;
     [self.navigationController pushViewController:model
                                          animated:YES];
 }

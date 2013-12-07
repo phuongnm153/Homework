@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ModelimageDetail">
+            <connections>
+                <outlet property="pageControl" destination="ouo-Vj-Z1j" id="7fS-4t-DWW"/>
+                <outlet property="scrollView" destination="UeY-b6-ISn" id="cN1-tb-JPb"/>
+                <outlet property="view" destination="1" id="3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UeY-b6-ISn">
+                    <rect key="frame" x="0.0" y="50" width="320" height="518"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </scrollView>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="ouo-Vj-Z1j">
+                    <rect key="frame" x="141" y="531" width="39" height="37"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="pageIndicatorTintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="currentPageIndicatorTintColor" red="1" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                </pageControl>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="UeY-b6-ISn" firstAttribute="top" secondItem="1" secondAttribute="top" constant="50" id="5Ca-k6-ZLd"/>
+                <constraint firstAttribute="centerX" secondItem="UeY-b6-ISn" secondAttribute="centerX" id="AZV-Hd-fGg"/>
+                <constraint firstAttribute="bottom" secondItem="ouo-Vj-Z1j" secondAttribute="bottom" id="SCQ-mC-fvw"/>
+                <constraint firstAttribute="bottom" secondItem="UeY-b6-ISn" secondAttribute="bottom" id="bSO-07-4Jz"/>
+                <constraint firstAttribute="trailing" secondItem="UeY-b6-ISn" secondAttribute="trailing" id="hds-AV-Fng"/>
+                <constraint firstItem="UeY-b6-ISn" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="xHA-t8-CWU"/>
+                <constraint firstAttribute="centerX" secondItem="ouo-Vj-Z1j" secondAttribute="centerX" id="z0h-Hr-czx"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+</document>

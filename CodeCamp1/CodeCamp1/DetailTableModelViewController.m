@@ -30,7 +30,8 @@ static NSString *CellModel = @"CellModel";
     _data = [NSMutableArray new];
     _tmpData = [NSMutableArray new];
     NSBundle *mainBundle = [NSBundle mainBundle];
-    NSString *staticResourcePath = [mainBundle pathForResource:@"ModelsList" ofType:@"plist"];
+    NSString *year = [NSString stringWithFormat:@"ModelsList%d",(int)self.year_select];
+    NSString *staticResourcePath = [mainBundle pathForResource:year ofType:@"plist"];
     NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:staticResourcePath];
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"Name" ascending:YES];
     NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
@@ -57,8 +58,7 @@ static NSString *CellModel = @"CellModel";
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    int year =self.year_select;
-    self.navigationItem.title = [NSString stringWithFormat:@"Models %d",year+2008];
+    self.navigationItem.title = [NSString stringWithFormat:@"Models %d",(int)self.year_select];
     
 }
 -(void) viewDidLayoutSubviews
@@ -86,8 +86,8 @@ static NSString *CellModel = @"CellModel";
     
     DetailModelViewController *model_detail = [[DetailModelViewController alloc] init];
     ModelTableCell *model = (ModelTableCell*)_data[indexPath.row];
+    model_detail.year_select = self.year_select;
     model_detail.model_name = model.nameModel.text;
-    // Detai Model
     [self.navigationController pushViewController:model_detail animated:YES];
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

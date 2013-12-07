@@ -13,14 +13,14 @@
             andIcon: (NSString*) icon
             andInfo: (NSString*) info
           andAvatar:(NSString*) avatar
-          andRating:(int) rating
+          andRating:(NSString*) video
 {
     if (self = [super init]) {
         self.model_name = name;
         self.model_icon = icon;
         self.model_info = info;
         self.model_avatar = avatar;
-        self.model_rating = rating;
+        self.model_video = video;
     }
     return self;
 }

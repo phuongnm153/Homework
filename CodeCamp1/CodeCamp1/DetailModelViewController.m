@@ -8,16 +8,27 @@
 
 #import "DetailModelViewController.h"
 #import "Models.h"
+#import "Reachability.h"
+#import "HUD.h"
+#import "ModelRate.h"
+#import "VideoPlayerViewController.h"
+#import "ModelimageDetail.h"
 @interface DetailModelViewController ()
 {
     NSMutableArray *_data;
+    BOOL _firstRate;
+    float oldRating,localRating;
+    NSString *_videoUrl,*_imgModelname;
 }
+@property (weak, nonatomic) IBOutlet UIButton *btnShare;
+@property (weak, nonatomic) IBOutlet UIButton *btnLike;
+@property (weak, nonatomic) IBOutlet UIButton *watchPhoto;
+@property (weak, nonatomic) IBOutlet UIButton *watchVideo;
 @end
 
 @implementation DetailModelViewController
-@synthesize avarta_model,imgInfoModel,model_name;
+@synthesize avarta_model,imgInfoModel,model_name,rateView,year_select;
 
-@synthesize rating_model;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -45,39 +56,204 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLayoutConstraint *witdhConstraint =
-    [NSLayoutConstraint constraintWithItem:self.view
-                                 attribute:NSLayoutAttributeWidth
-                                 relatedBy:NSLayoutRelationEqual
-                                    toItem:self.avarta_model
-                                 attribute:NSLayoutAttributeWidth
-                                multiplier:2
-                                  constant:0];
-    [self.view addConstraint:witdhConstraint];
-    // Do any additional setup after loading the view from its nib.
-    [self initData];
-
+    _watchPhoto.hidden = TRUE;
+    _watchVideo.hidden=TRUE;
+    _btnLike.hidden = TRUE;
+    _btnShare.hidden = TRUE;
+    _firstRate = TRUE;
+    if ([self connectedToNetwork])
+    {
+        [HUD showUIBlockingIndicatorWithText:@"Loading..."];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSLayoutConstraint *witdhConstraint =
+                [NSLayoutConstraint constraintWithItem:self.view
+                                             attribute:NSLayoutAttributeWidth
+                                             relatedBy:NSLayoutRelationEqual
+                                                toItem:self.avarta_model
+                                             attribute:NSLayoutAttributeWidth
+                                            multiplier:2
+                                              constant:0];
+                [self.view addConstraint:witdhConstraint];
+                [self loadRate];
+                [self initData];
+                _watchPhoto.hidden=FALSE;
+                _watchVideo.hidden=FALSE;
+                _btnLike.hidden = FALSE;
+                _btnShare.hidden = FALSE;
+                [HUD hideUIBlockingIndicator];
+            });
+            
+        });
+        
+    }else{
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No Internet Connection"
+                                                        message:@"Please check your internet connection and try again."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
     
+    
+}
+- (void)rateView:(RateView *)rateView ratingDidChange:(float)rating {
+    //self.statusLabel.text = [NSString stringWithFormat:@"Rating: %f", rating];
+    if (_firstRate) {
+        localRating = rating;
+        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Rating this model"
+                                                     message:@"Are you sure rating for this model?"
+                                                    delegate:self
+                                           cancelButtonTitle:@"No"
+                                           otherButtonTitles:@"Yes", nil];
+        
+        [av show];
+    }
+    
+}
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 1){
+        [self writeFileModelRate:localRating];
+        _firstRate = FALSE;
+    }else
+    {
+        self.rateView.rating = oldRating;
+    }
+}
+- (void) writeFileModelRate:(float)rating{
+    
+    //  Bây giờ lưu lại thông tin của car và một file nào đó
+    NSString *documentPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
+    NSString *year = [NSString stringWithFormat:@"ModelsRate%d",(int)self.year_select];
+    NSString *rateFile = [documentPath stringByAppendingPathComponent:year];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSMutableDictionary *dic = [NSMutableDictionary new];
+
+    if ([fileManager fileExistsAtPath:rateFile]){
+    //  Lấy ra dictionary biểu diễn các thông tin của car và lưu vào file
+        NSDictionary *dictionary  = [NSDictionary dictionaryWithContentsOfFile:rateFile];
+        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"Name" ascending:YES];
+        NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+        NSArray *sortedArray = [[dictionary allValues] sortedArrayUsingDescriptors:sortDescriptors];
+        
+        for (int i = 0;i < [dictionary count];i++) {
+            NSDictionary *tmp = [NSDictionary new];
+            float clicks =[[[sortedArray objectAtIndex:i] objectForKey:@"sumClicks"] floatValue];
+            float scores =[[[sortedArray objectAtIndex:i] objectForKey:@"sumScores"] floatValue];
+            if ([[[sortedArray objectAtIndex:i] objectForKey:@"Name"] isEqualToString:self.model_name]) {
+                clicks = clicks +1;
+                scores = scores+rating;
+                self.rateView.rating =lroundf(scores/clicks);
+            }
+            tmp = @{@"Name": [[sortedArray objectAtIndex:i] objectForKey:@"Name"],
+                     @"sumClicks": @(clicks),
+                     @"sumScores": @(scores)};
+            [dic setObject:tmp forKey:[[sortedArray objectAtIndex:i] objectForKey:@"Name"]];
+        }
+    }else{
+        NSBundle *mainBundle = [NSBundle mainBundle];
+        NSString *year = [NSString stringWithFormat:@"ModelsList%d",(int)self.year_select];
+        NSString *staticResourcePath = [mainBundle pathForResource:year ofType:@"plist"];
+        NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:staticResourcePath];
+        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"Name" ascending:YES];
+        NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+        NSArray *sortedArray = [[dictionary allValues] sortedArrayUsingDescriptors:sortDescriptors];
+        
+        for (int i = 0;i < [dictionary count];i++) {
+            NSDictionary *tmp = [NSDictionary new];
+            if ([[[sortedArray objectAtIndex:i] objectForKey:@"Name"] isEqualToString:self.model_name]) {
+                tmp = @{@"Name": [[sortedArray objectAtIndex:i] objectForKey:@"Name"],
+                                      @"sumClicks": @(1),
+                                      @"sumScores": @(rating)};
+                self.rateView.rating = rating;
+            }else{
+            tmp = @{@"Name": [[sortedArray objectAtIndex:i] objectForKey:@"Name"],
+                                  @"sumClicks": @(0),
+                                  @"sumScores": @(0)};
+            }
+            [dic setObject:tmp forKey:[[sortedArray objectAtIndex:i] objectForKey:@"Name"]];
+        }
+    }
+    
+    [dic writeToFile:rateFile atomically:YES];
+
+}
+
+- (void) readFileModelRate{
+    //  Lấy ra file đã lưu trữ và truyền vào đọc bằng dictionary
+    NSString *documentPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
+    NSString *year = [NSString stringWithFormat:@"ModelsRate%d",(int)self.year_select];
+    NSString *rateFile = [documentPath stringByAppendingPathComponent:year];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    if ([fileManager fileExistsAtPath:rateFile]){
+        NSDictionary *dictionary  = [NSDictionary dictionaryWithContentsOfFile:rateFile];
+        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"Name" ascending:YES];
+        NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+        NSArray *sortedArray = [[dictionary allValues] sortedArrayUsingDescriptors:sortDescriptors];
+        for (int i = 0;i < [dictionary count];i++) {
+            if ([[[sortedArray objectAtIndex:i] objectForKey:@"Name"] isEqualToString:self.model_name]) {
+                float clicks =[[[sortedArray objectAtIndex:i] objectForKey:@"sumClicks"] floatValue];
+                float scores =[[[sortedArray objectAtIndex:i] objectForKey:@"sumScores"] floatValue];
+                NSLog(@"%ld",lroundf(scores/clicks));
+                self.rateView.rating =lroundf(scores/clicks);                
+            }
+        }
+    }
+    else{
+        self.rateView.rating = 0;
+    }
+    oldRating = self.rateView.rating;
+}
+- (BOOL) connectedToNetwork{
+    Reachability* reachability = [Reachability reachabilityWithHostName:@"google.com"];
+    NetworkStatus remoteHostStatus = [reachability currentReachabilityStatus];
+    
+    if(remoteHostStatus == NotReachable)
+    {
+        return NO;
+    }
+    else if (remoteHostStatus == ReachableViaWWAN)
+    {
+        return TRUE;
+    }
+    else if (remoteHostStatus == ReachableViaWiFi)
+    {
+        return TRUE;
+    }
+    return NO;
 }
 -(void) viewDidLayoutSubviews
 {
     
 }
-- (BOOL)shouldAutorotate
+//- (BOOL)shouldAutorotate
+//{
+//    return NO; //cho phép điều chỉnh giao diện
+//    //return NO sẽ không gọi các hàm viewWillLayoutSubviews và viewDidLayoutSubviews
+//}
+//- (NSUInteger)supportedInterfaceOrientations
+//{
+//    return UIInterfaceOrientationMaskPortrait ;
+//}
+-(void) loadRate
 {
-    return NO; //cho phép điều chỉnh giao diện
-    //return NO sẽ không gọi các hàm viewWillLayoutSubviews và viewDidLayoutSubviews
-}
-- (NSUInteger)supportedInterfaceOrientations
-{
-    return UIInterfaceOrientationMaskPortrait ;
+    self.rateView.notSelectedImage = [UIImage imageNamed:@"star_0.jpg"];
+    //self.rateView.halfSelectedImage = [UIImage imageNamed:@"kermit_half.png"];
+    self.rateView.fullSelectedImage = [UIImage imageNamed:@"star.png"];
+    self.rateView.editable = YES;
+    self.rateView.maxRating = 5;
+    self.rateView.delegate = self;
+    [self readFileModelRate];
 }
 -(void) initData
 {
     if(_data) return;
     _data = [NSMutableArray new];
     NSBundle *mainBundle = [NSBundle mainBundle];
-    NSString *staticResourcePath = [mainBundle pathForResource:@"ModelsList" ofType:@"plist"];
+    NSString *year = [NSString stringWithFormat:@"ModelsList%d",(int)self.year_select];
+    NSString *staticResourcePath = [mainBundle pathForResource:year ofType:@"plist"];
     NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:staticResourcePath];
     NSDictionary *dic = [[NSDictionary alloc] initWithDictionary:dictionary[self.model_name]];
     
@@ -85,10 +261,10 @@
                                         andIcon:dic[@"IconFileName"]
                                         andInfo:dic[@"ImgInfo"]
                                       andAvatar:dic[@"AvaFileUrl"]
-                                      andRating:[dic[@"Rating"] intValue]];
-    NSLog(@"%@",model);
+                                      andRating:dic[@"VideoUrl"]];
+    _videoUrl = model.model_video;
+    _imgModelname = model.model_name;
     self.imgInfoModel.image = [UIImage imageNamed:model.model_info];
-    rating_model.image = [self imageForRating:model.model_rating];
     NSURL *imageURL = [NSURL URLWithString:model.model_avatar];
     NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
     avarta_model.image = [UIImage imageWithData:imageData];
@@ -246,9 +422,21 @@
     r.origin.y += diff;
 	containerView.frame = r;
 }
-
--(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
-{
-    return YES;
+- (IBAction)btnWatchPhoto:(id)sender {
+    ModelimageDetail *img_detail = [[ModelimageDetail alloc] init];
+    img_detail.modelName =_imgModelname;
+    [self.navigationController pushViewController:img_detail
+                                         animated:YES];
 }
+- (IBAction)btnWatchVideo:(id)sender {
+    VideoPlayerViewController *video_detail = [[VideoPlayerViewController alloc] init];
+    video_detail.videoUrl = _videoUrl;
+    [self.navigationController pushViewController:video_detail
+                                         animated:YES];
+}
+
+//-(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+//{
+//    return YES;
+//}
 @end
